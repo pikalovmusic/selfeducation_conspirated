@@ -32,7 +32,7 @@ func WorkerTest() {
 	for {
 		select {
 		case <-t.C:
-			err := os.WriteFile("/app/static/_index.md", []byte(fmt.Sprintf(content, b)), 0644)
+			err := os.WriteFile("/app/static/_index.md", []byte(fmt.Sprint(content, b)), 0644)
 			if err != nil {
 				log.Println(err)
 			}
